@@ -1,0 +1,8 @@
+node_modules
+dist
+*.log
+*.tsbuildinfo
+.DS_Store
+
+# Keep local reference materials private
+reference/
