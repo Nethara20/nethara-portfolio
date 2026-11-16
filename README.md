@@ -8,10 +8,17 @@ Professional Skills (IT1215) portfolio for W.H.B. Nethara (SA25610259). A black 
 npm install     # first time only
 npm run dev     # development server, http://localhost:5173
 npm run build   # production build into dist/
-npm run preview # serve the production build, http://localhost:4173
+npm run preview # serve the production build, http://localhost:4173/nethara-portfolio/
 ```
 
-The built `dist/` folder is fully static and uses relative paths, so it can be opened from any static host (GitHub Pages, Netlify, a university server).
+## Deployment
+
+The site is published to GitHub Pages at https://nethara20.github.io/nethara-portfolio/.
+
+- `vite.config.ts` sets `base: '/nethara-portfolio/'`, so every built asset path starts with the repository name. If the repository is renamed, update `base` to match.
+- `.github/workflows/deploy.yml` runs `npm ci` and `npm run build`, then deploys `dist/` with the official GitHub Pages actions. It runs on every push to `main` and can be started manually from the Actions tab.
+- Routing uses `HashRouter` (`#/chapter/01`), so refreshing any page works on GitHub Pages without a 404 fallback.
+- One-time setup: in the repository, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
 
 ## Pages
 
